@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
 // Visite https://eclipse-ee4j.github.io/jaxb-ri 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2025.08.04 a las 02:07:00 PM COT 
+// Generado el: 2025.08.19 a las 10:26:24 PM COT 
 //
 
 
@@ -74,6 +74,30 @@ public class ObjectFactory {
      */
     public GetAllUsersResponse createGetAllUsersResponse() {
         return new GetAllUsersResponse();
+    }
+
+    /**
+     * Create an instance of {@link CreateUserRequest }
+     * 
+     */
+    public CreateUserRequest createCreateUserRequest() {
+        return new CreateUserRequest();
+    }
+
+    /**
+     * Create an instance of {@link UserCreation }
+     * 
+     */
+    public UserCreation createUserCreation() {
+        return new UserCreation();
+    }
+
+    /**
+     * Create an instance of {@link CreateUserResponse }
+     * 
+     */
+    public CreateUserResponse createCreateUserResponse() {
+        return new CreateUserResponse();
     }
 
 }

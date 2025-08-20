@@ -37,6 +37,14 @@ public class UserEndpoint {
         return response;
     }
 
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createUserRequest")
+    @ResponsePayload
+    public CreateUserResponse saveUser(@RequestPayload CreateUserRequest request) {
+        CreateUserResponse response = new CreateUserResponse();
+        response.setMessage(userService.saveUser(request.getUser()));
+        return response;
+    }
+
     private User createUser(int id, String name, String email) {
         User user = new User();
         user.setId(id);
