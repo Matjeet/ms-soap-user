@@ -1,5 +1,6 @@
 package com.soap.user.repository.user;
 
+import com.soap.user.entity.CountryEntity;
 import com.soap.user.entity.UserEntity;
 import com.soap.user.generated.User;
 import com.soap.user.mapper.UserMapper;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static com.soap.user.mapper.UserMapper.convertToEntity;
 import static com.soap.user.mapper.UserMapper.convertToUser;
@@ -35,9 +35,9 @@ public class JpaUserRepository implements IUserRepository {
     }
 
     @Override
-    public User saveUser(User user, Integer countryId) {
+    public User saveUser(User user, CountryEntity country) {
         UserEntity userEntity = convertToEntity(user);
-        userEntity.getCountry().setId(countryId);
+        userEntity.setCountry(country);
         return convertToUser(userJpaRepository.save(userEntity));
     }
 

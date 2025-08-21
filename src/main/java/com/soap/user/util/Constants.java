@@ -9,4 +9,6 @@ public class Constants {
     public static final String CELLPHONE_REGEX = "^[0-9]{10,11}$";
 
     public static final String COL_PREFIX = "+57";
+
+    public static final Integer INITIAL_BALANCE = 0;
 }

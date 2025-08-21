@@ -28,13 +28,17 @@ public class UserEntity {
     @Column(nullable = false)
     private String identityNumber;
 
-    @JoinColumn(name = "country_id")
-    @OneToOne
+    @Column(nullable = false)
+    private Integer balance;
+
+    @JoinColumn(name = "country_id", nullable = false, foreignKey = @ForeignKey(name = "fk_user_country"))
+    @ManyToOne
     private CountryEntity country;
 
-    public UserEntity() {}
+    public UserEntity() {
+    }
 
-    public UserEntity(int id, String name, String lastName, String email, String cellphone, String identityType, String identityNumber, CountryEntity countryId) {
+    public UserEntity(int id, String name, String lastName, String email, String cellphone, String identityType, String identityNumber, Integer balance, CountryEntity country) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -42,7 +46,8 @@ public class UserEntity {
         this.cellphone = cellphone;
         this.identityType = identityType;
         this.identityNumber = identityNumber;
-        this.country = countryId;
+        this.balance = balance;
+        this.country = country;
     }
 
     public int getId() {
@@ -99,6 +104,14 @@ public class UserEntity {
 
     public void setIdentityNumber(String identityNumber) {
         this.identityNumber = identityNumber;
+    }
+
+    public Integer getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Integer balance) {
+        this.balance = balance;
     }
 
     public CountryEntity getCountry() {
