@@ -59,7 +59,7 @@ public class UserService implements IUserService {
 
         CountryEntity country = countryRepository.findByName(user.getCountry());
 
-        userRepository.saveUser(convertToUser(user), country.getId());
+        userRepository.saveUser(convertToUser(user), country);
 
         return USER_CREATED_SUCCESS;
     }

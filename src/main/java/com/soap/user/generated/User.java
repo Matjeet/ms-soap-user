@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
 // Visite https://eclipse-ee4j.github.io/jaxb-ri 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2025.08.19 a las 10:26:24 PM COT 
+// Generado el: 2025.08.20 a las 07:30:48 PM COT 
 //
 
 
@@ -31,6 +31,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *         &lt;element name="cellphone" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="identityType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="identityNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="balance" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -49,6 +50,7 @@ import jakarta.xml.bind.annotation.XmlType;
     "cellphone",
     "identityType",
     "identityNumber",
+    "balance",
     "country"
 })
 public class User {
@@ -66,6 +68,7 @@ public class User {
     protected String identityType;
     @XmlElement(required = true)
     protected String identityNumber;
+    protected int balance;
     @XmlElement(required = true)
     protected String country;
 
@@ -227,6 +230,22 @@ public class User {
      */
     public void setIdentityNumber(String value) {
         this.identityNumber = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad balance.
+     * 
+     */
+    public int getBalance() {
+        return balance;
+    }
+
+    /**
+     * Define el valor de la propiedad balance.
+     * 
+     */
+    public void setBalance(int value) {
+        this.balance = value;
     }
 
     /**

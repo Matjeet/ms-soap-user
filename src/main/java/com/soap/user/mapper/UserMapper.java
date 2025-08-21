@@ -5,6 +5,8 @@ import com.soap.user.entity.UserEntity;
 import com.soap.user.generated.User;
 import com.soap.user.generated.UserCreation;
 
+import static com.soap.user.util.Constants.INITIAL_BALANCE;
+
 public class UserMapper {
 
     private UserMapper() {
@@ -19,6 +21,8 @@ public class UserMapper {
         user.setCellphone(userEntity.getCellphone());
         user.setIdentityType(userEntity.getIdentityType());
         user.setIdentityNumber(userEntity.getIdentityNumber());
+        user.setBalance(userEntity.getBalance());
+        user.setCountry(userEntity.getCountry().getName());
         return user;
     }
 
@@ -31,6 +35,7 @@ public class UserMapper {
         userEntity.setCellphone(user.getCellphone());
         userEntity.setIdentityType(user.getIdentityType());
         userEntity.setIdentityNumber(user.getIdentityNumber());
+        userEntity.setBalance(INITIAL_BALANCE);
         userEntity.setCountry(new CountryEntity());
         return userEntity;
     }
