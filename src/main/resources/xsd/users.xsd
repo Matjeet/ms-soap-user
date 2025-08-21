@@ -58,6 +58,7 @@
             <xs:element name="cellphone" type="xs:string"/>
             <xs:element name="identityType" type="xs:string"/>
             <xs:element name="identityNumber" type="xs:string"/>
+            <xs:element name="balance" type="xs:int"/>
             <xs:element name="country" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
