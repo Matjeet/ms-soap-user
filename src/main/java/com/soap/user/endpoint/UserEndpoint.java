@@ -45,6 +45,14 @@ public class UserEndpoint {
         return response;
     }
 
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "topUpBalanceRequest")
+    @ResponsePayload
+    public TopUpBalanceResponse rechargeBalance(@RequestPayload TopUpBalanceRequest request){
+        TopUpBalanceResponse response = new TopUpBalanceResponse();
+        response.setMessage(userService.rechargeBalance(request.getRecharge()));
+        return response;
+    }
+
     private User createUser(int id, String name, String email) {
         User user = new User();
         user.setId(id);

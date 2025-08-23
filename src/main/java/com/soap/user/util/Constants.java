@@ -10,5 +10,5 @@ public class Constants {
 
     public static final String COL_PREFIX = "+57";
 
-    public static final Integer INITIAL_BALANCE = 0;
+    public static final Integer EMPTY_BALANCE = 0;
 }

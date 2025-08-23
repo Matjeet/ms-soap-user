@@ -10,6 +10,7 @@ package com.soap.user.generated;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
@@ -24,7 +25,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="recharge" type="{http://soap.com/user/schemas}rechargeBalance"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,27 +36,36 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id"
+    "recharge"
 })
-@XmlRootElement(name = "getUserRequest")
-public class GetUserRequest {
+@XmlRootElement(name = "topUpBalanceRequest")
+public class TopUpBalanceRequest {
 
-    protected int id;
+    @XmlElement(required = true)
+    protected RechargeBalance recharge;
 
     /**
-     * Obtiene el valor de la propiedad id.
+     * Obtiene el valor de la propiedad recharge.
      * 
+     * @return
+     *     possible object is
+     *     {@link RechargeBalance }
+     *     
      */
-    public int getId() {
-        return id;
+    public RechargeBalance getRecharge() {
+        return recharge;
     }
 
     /**
-     * Define el valor de la propiedad id.
+     * Define el valor de la propiedad recharge.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link RechargeBalance }
+     *     
      */
-    public void setId(int value) {
-        this.id = value;
+    public void setRecharge(RechargeBalance value) {
+        this.recharge = value;
     }
 
 }

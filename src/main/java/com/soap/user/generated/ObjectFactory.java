@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
 // Visite https://eclipse-ee4j.github.io/jaxb-ri 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2025.08.20 a las 07:30:48 PM COT 
+// Generado el: 2025.08.22 a las 09:50:56 PM COT 
 //
 
 
@@ -98,6 +98,30 @@ public class ObjectFactory {
      */
     public CreateUserResponse createCreateUserResponse() {
         return new CreateUserResponse();
+    }
+
+    /**
+     * Create an instance of {@link TopUpBalanceRequest }
+     * 
+     */
+    public TopUpBalanceRequest createTopUpBalanceRequest() {
+        return new TopUpBalanceRequest();
+    }
+
+    /**
+     * Create an instance of {@link RechargeBalance }
+     * 
+     */
+    public RechargeBalance createRechargeBalance() {
+        return new RechargeBalance();
+    }
+
+    /**
+     * Create an instance of {@link TopUpBalanceResponse }
+     * 
+     */
+    public TopUpBalanceResponse createTopUpBalanceResponse() {
+        return new TopUpBalanceResponse();
     }
 
 }
