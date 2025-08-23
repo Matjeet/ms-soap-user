@@ -6,8 +6,11 @@ public class Messages {
     }
 
     public static final String USER_CREATED_SUCCESS = "El usuario se ha creado correctamente en base de datos";
+    public static final String BALANCE_RECHARGED_SUCCESS = "El saldo ha sido recargado exitosamente";
 
     public static final String INCORRECT_EMAIL = "El correo electrónico no cumple con el formato esperado";
     public static final String INCORRECT_CELLPHONE = "El número de celular no cumple con lo requerimientos";
-    public static final String USER_ALREADY_EXIST = "EL usuario ya se encuentra registrado dentro de la base de datos";
+    public static final String USER_ALREADY_EXIST = "El usuario ya se encuentra registrado dentro de la base de datos";
+    public static final String USER_NOT_FOUND = "El usuario no se encuentra registrado en nuestra base de datos";
+    public static final String INVALID_BALANCE = "El valor del saldo es inválido";
 }

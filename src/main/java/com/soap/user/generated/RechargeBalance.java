@@ -11,21 +11,21 @@ package com.soap.user.generated;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para anonymous complex type.
+ * <p>Clase Java para rechargeBalance complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType&gt;
+ * &lt;complexType name="rechargeBalance"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="user" type="{http://soap.com/user/schemas}user"/&gt;
+ *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="balance" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,37 +35,54 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "user"
+@XmlType(name = "rechargeBalance", propOrder = {
+    "email",
+    "balance"
 })
-@XmlRootElement(name = "getUserResponse")
-public class GetUserResponse {
+public class RechargeBalance {
 
     @XmlElement(required = true)
-    protected User user;
+    protected String email;
+    protected int balance;
 
     /**
-     * Obtiene el valor de la propiedad user.
+     * Obtiene el valor de la propiedad email.
      * 
      * @return
      *     possible object is
-     *     {@link User }
+     *     {@link String }
      *     
      */
-    public User getUser() {
-        return user;
+    public String getEmail() {
+        return email;
     }
 
     /**
-     * Define el valor de la propiedad user.
+     * Define el valor de la propiedad email.
      * 
      * @param value
      *     allowed object is
-     *     {@link User }
+     *     {@link String }
      *     
      */
-    public void setUser(User value) {
-        this.user = value;
+    public void setEmail(String value) {
+        this.email = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad balance.
+     * 
+     */
+    public int getBalance() {
+        return balance;
+    }
+
+    /**
+     * Define el valor de la propiedad balance.
+     * 
+     */
+    public void setBalance(int value) {
+        this.balance = value;
     }
 
 }

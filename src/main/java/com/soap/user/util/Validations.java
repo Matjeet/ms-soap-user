@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import static com.soap.user.util.Constants.CELLPHONE_REGEX;
-import static com.soap.user.util.Constants.EMAIL_REGEX;
+import static com.soap.user.util.Constants.*;
 
 public class Validations {
 
@@ -51,5 +50,9 @@ public class Validations {
         if (!errorMessages.isEmpty()) {
             throw new IllegalArgumentException(String.join("\n", errorMessages));
         }
+    }
+
+    public static boolean isValidBalance(Integer balance){
+        return balance > EMPTY_BALANCE;
     }
 }

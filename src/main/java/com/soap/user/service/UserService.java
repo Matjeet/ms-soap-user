@@ -1,9 +1,8 @@
 package com.soap.user.service;
 
 import com.soap.user.entity.CountryEntity;
-import com.soap.user.exception.IncorrectCellphoneException;
-import com.soap.user.exception.IncorrectEmailException;
-import com.soap.user.exception.UserAlreadyExistException;
+import com.soap.user.exception.*;
+import com.soap.user.generated.RechargeBalance;
 import com.soap.user.generated.User;
 import com.soap.user.generated.UserCreation;
 import com.soap.user.repository.country.ICountryRepository;
@@ -62,6 +61,26 @@ public class UserService implements IUserService {
         userRepository.saveUser(convertToUser(user), country);
 
         return USER_CREATED_SUCCESS;
+    }
+
+    @Override
+    public String rechargeBalance(RechargeBalance balance) {
+
+        if(!isValidBalance(balance.getBalance())) throw new InvalidBalanceException(INVALID_BALANCE);
+
+        Optional<User> user = userRepository.findByEmail(balance.getEmail());
+
+        if(user.isEmpty()) throw new UserNotFoundException(USER_NOT_FOUND);
+
+        User updateUser = user.get();
+
+        CountryEntity country = countryRepository.findByName(updateUser.getCountry());
+
+        updateUser.setBalance(updateUser.getBalance() + balance.getBalance());
+
+        userRepository.saveUser(updateUser, country);
+
+        return BALANCE_RECHARGED_SUCCESS;
     }
 
     private boolean validateUserInDB(UserCreation user){
